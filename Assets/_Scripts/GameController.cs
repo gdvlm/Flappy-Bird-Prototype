@@ -7,27 +7,38 @@ public class GameController : MonoBehaviour
     [SerializeField] private Transform pipePairs;
     [SerializeField] private GameObject character;
 
-    private bool _isPlaying;
-    private PlayerAction _playerAction;
-    public List<PipeMovement> _pipeMovements = new();
+    private readonly List<PipeMovement> _pipeMovements = new();
+    private Character _character;
 
     void Awake()
     {
-        _playerAction = character.GetComponent<PlayerAction>();
+        _character = character.GetComponent<Character>();
     }
 
     void Start()
     {
-        _isPlaying = false;
         _pipeMovements.AddRange(pipePairs.GetComponentsInChildren<PipeMovement>());
+    }
+
+    void Update()
+    {
+        if (!_character.characterLost)
+        {
+            return;
+        }
+        
+        _character.characterLost = false;
+        StopGame();
+        // Show defeat UI
     }
 
     public void StartGame()
     {
         menuPanel.SetActive(false);
-        _playerAction.MoveToStartingPosition();
         character.SetActive(true);
-        
+        _character.MoveToStartingPosition();
+        _character.AllowMovement();
+
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {
             pipeMovement.EnableMovement(true);
