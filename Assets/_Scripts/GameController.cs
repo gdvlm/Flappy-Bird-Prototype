@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject startMenu;
+    [SerializeField] private GameObject defeatMenu;
     [SerializeField] private Transform pipePairs;
     [SerializeField] private GameObject character;
 
@@ -29,18 +30,19 @@ public class GameController : MonoBehaviour
         
         _character.characterLost = false;
         StopGame();
-        // Show defeat UI
+        defeatMenu.SetActive(true);
     }
 
     public void StartGame()
     {
-        menuPanel.SetActive(false);
+        defeatMenu.SetActive(false);
+        startMenu.SetActive(false);
         character.SetActive(true);
-        _character.MoveToStartingPosition();
-        _character.AllowMovement();
+        _character.ResetCharacter();
 
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {
+            pipeMovement.SetToInitialPosition();
             pipeMovement.EnableMovement(true);
         }
     }

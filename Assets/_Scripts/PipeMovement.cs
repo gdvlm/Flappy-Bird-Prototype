@@ -6,6 +6,12 @@ public class PipeMovement : MonoBehaviour
     [SerializeField] private Transform startPosition;
 
     private bool _allowMovement = false;
+    private Vector3 _resetPosition;
+
+    void Start()
+    {
+        _resetPosition = transform.position;
+    }
 
     void FixedUpdate()
     {
@@ -24,6 +30,11 @@ public class PipeMovement : MonoBehaviour
         {
             transform.position = startPosition.position;
         }
+    }
+
+    public void SetToInitialPosition()
+    {
+        transform.position = _resetPosition;
     }
 
     public void EnableMovement(bool allowMovement)

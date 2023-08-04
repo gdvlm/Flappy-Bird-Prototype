@@ -30,14 +30,11 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void MoveToStartingPosition()
+    public void ResetCharacter()
     {
         transform.position = startingPoint.position;
-    }
-
-    public void AllowMovement()
-    {
         _playerAction.allowMovement = true;
+        _playerAction.ResetVelocity();
     }
     
     private void DisableMovement()

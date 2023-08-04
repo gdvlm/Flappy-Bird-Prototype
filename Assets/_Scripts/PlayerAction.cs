@@ -37,4 +37,9 @@ public class PlayerAction : MonoBehaviour
         // Setting the velocity directly allows us to ignore the current downward force
         _rigidbody2D.velocity = new Vector2(0, jumpAmount);
     }
+
+    public void ResetVelocity()
+    {
+        _rigidbody2D.velocity = Vector2.zero;
+    }
 }
