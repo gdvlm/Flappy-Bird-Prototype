@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject defeatMenu;
+    [SerializeField] private GameObject gameHud;
     [SerializeField] private Transform pipePairs;
     [SerializeField] private GameObject character;
 
@@ -37,6 +38,7 @@ public class GameController : MonoBehaviour
     {
         defeatMenu.SetActive(false);
         startMenu.SetActive(false);
+        gameHud.SetActive(true);
         character.SetActive(true);
         _character.ResetCharacter();
 
@@ -49,6 +51,8 @@ public class GameController : MonoBehaviour
 
     public void StopGame()
     {
+        gameHud.SetActive(false);
+        
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {
             pipeMovement.EnableMovement(false);
