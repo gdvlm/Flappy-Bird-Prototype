@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1213322}
   - component: {fileID: 1213321}
   m_Layer: 5
-  m_Name: BestText
+  m_Name: HighScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,6 +303,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1735027273}
     m_Modifications:
+    - target: {fileID: 178489021582575781, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_TagString
+      value: ScoreBox
+      objectReference: {fileID: 0}
     - target: {fileID: 300213833776538703, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_Size.y
       value: 300
@@ -418,6 +422,22 @@ PrefabInstance:
     - target: {fileID: 300213835151816785, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_SizeDelta.y
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783821878911775377, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_Size.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 156.99548
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
@@ -765,6 +785,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1735027273}
     m_Modifications:
+    - target: {fileID: 178489021582575781, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_TagString
+      value: ScoreBox
+      objectReference: {fileID: 0}
     - target: {fileID: 300213833776538703, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_Size.y
       value: 700
@@ -876,6 +900,22 @@ PrefabInstance:
     - target: {fileID: 300213835151816785, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_SizeDelta.y
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783821878911775377, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_Size.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -43.380096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
@@ -1408,7 +1448,7 @@ GameObject:
   - component: {fileID: 524034669}
   - component: {fileID: 524034668}
   m_Layer: 5
-  m_Name: BestLabel
+  m_Name: HighScoreLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1538,6 +1578,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1735027273}
     m_Modifications:
+    - target: {fileID: 178489021582575781, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_TagString
+      value: ScoreBox
+      objectReference: {fileID: 0}
     - target: {fileID: 300213833776538703, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_Size.y
       value: 400
@@ -1657,6 +1701,22 @@ PrefabInstance:
     - target: {fileID: 300213835151816785, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783821878911775377, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_Size.y
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 96.37555
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
@@ -2486,6 +2546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingPoint: {fileID: 421489127}
+  scoreKeeper: {fileID: 2101316958}
   characterLost: 0
 --- !u!1 &907729666
 GameObject:
@@ -4136,6 +4197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2005024768}
+  defeatScoreText: {fileID: 2036282629}
+  defeatHighScoreText: {fileID: 1213321}
 --- !u!1001 &300213833811721986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4143,6 +4206,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1735027273}
     m_Modifications:
+    - target: {fileID: 178489021582575781, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_TagString
+      value: ScoreBox
+      objectReference: {fileID: 0}
     - target: {fileID: 300213834031280332, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: startPosition
       value: 
@@ -4266,6 +4333,14 @@ PrefabInstance:
     - target: {fileID: 300213835151816785, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783821878911775377, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_Size.y
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068141392891181960, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 210
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}

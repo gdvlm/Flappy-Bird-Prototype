@@ -3,6 +3,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] private Transform startingPoint;
+    [SerializeField] private ScoreKeeper scoreKeeper;
 
     [HideInInspector] public bool characterLost = false;
     private PlayerAction _playerAction;
@@ -20,6 +21,14 @@ public class Character : MonoBehaviour
             characterLost = true;
         }
     }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("ScoreBox") && !characterLost)
+        {
+            scoreKeeper.IncrementScore();
+        }
+    }    
 
     private void OnCollisionEnter2D(Collision2D other)
     {

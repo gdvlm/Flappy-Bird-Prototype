@@ -4,30 +4,32 @@ using UnityEngine;
 public class ScoreKeeper : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI defeatScoreText;
+    [SerializeField] private TextMeshProUGUI defeatHighScoreText;
 
     private int _currentScore = 0;
     private int _highestScore = 0;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void IncrementScore()
     {
-        _currentScore++;
-        scoreText.text = _currentScore.ToString();
+        SetCurrentScore(_currentScore + 1);
 
         if (_currentScore > _highestScore)
         {
             _highestScore = _currentScore;
+            defeatHighScoreText.text = _highestScore.ToString();
         }
+    }
+
+    public void ResetScore()
+    {
+        SetCurrentScore(0);
+    }
+
+    private void SetCurrentScore(int score)
+    {
+        _currentScore = score;
+        scoreText.text = score.ToString();
+        defeatScoreText.text = score.ToString();        
     }
 }

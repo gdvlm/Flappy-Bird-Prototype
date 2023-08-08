@@ -11,10 +11,12 @@ public class GameController : MonoBehaviour
 
     private readonly List<PipeMovement> _pipeMovements = new();
     private Character _character;
+    private ScoreKeeper _scoreKeeper;
 
     void Awake()
     {
         _character = character.GetComponent<Character>();
+        _scoreKeeper = GetComponent<ScoreKeeper>();
     }
 
     void Start()
@@ -41,6 +43,7 @@ public class GameController : MonoBehaviour
         gameHud.SetActive(true);
         character.SetActive(true);
         _character.ResetCharacter();
+        _scoreKeeper.ResetScore();
 
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {
