@@ -26,12 +26,12 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (!_character.characterLost)
+        if (_character.canMove)
         {
             return;
         }
         
-        _character.characterLost = false;
+        _character.canMove = true;
         StopGame();
         defeatMenu.SetActive(true);
     }

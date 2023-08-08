@@ -5,9 +5,11 @@ public class Character : MonoBehaviour
     [SerializeField] private Transform startingPoint;
     [SerializeField] private ScoreKeeper scoreKeeper;
 
-    [HideInInspector] public bool characterLost = false;
+    [HideInInspector] public bool canMove = true;
+    
     private PlayerAction _playerAction;
-
+    private bool _isAlive = true;
+    
     void Awake()
     {
         _playerAction = GetComponent<PlayerAction>();
@@ -18,13 +20,14 @@ public class Character : MonoBehaviour
         if (other.transform.CompareTag("Pipe"))
         {
             DisableMovement();
-            characterLost = true;
+            canMove = false;
+            _isAlive = false;
         }
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.transform.CompareTag("ScoreBox") && !characterLost)
+        if (other.transform.CompareTag("ScoreBox") && _isAlive)
         {
             scoreKeeper.IncrementScore();
         }
@@ -35,7 +38,8 @@ public class Character : MonoBehaviour
         if (other.transform.CompareTag("Ground"))
         {
             DisableMovement();
-            characterLost = true;
+            canMove = false;
+            _isAlive = false;
         }
     }
 
@@ -44,6 +48,7 @@ public class Character : MonoBehaviour
         transform.position = startingPoint.position;
         _playerAction.allowMovement = true;
         _playerAction.ResetVelocity();
+        _isAlive = true;
     }
     
     private void DisableMovement()
