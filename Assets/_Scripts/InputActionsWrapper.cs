@@ -40,8 +40,19 @@ public partial class @InputActionsWrapper : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""31792163-a52a-460f-a325-82b064afeac7"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""32979348-8ad3-44b9-819b-3074e17a57a1"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46aba59d-825e-4bd2-b8f6-439ce5c4bd3a"",
+                    ""path"": ""<Touchscreen>/Press"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
