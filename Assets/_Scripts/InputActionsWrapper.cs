@@ -40,7 +40,7 @@ public partial class @InputActionsWrapper : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""32979348-8ad3-44b9-819b-3074e17a57a1"",
+                    ""id"": ""e727b14b-c1be-4628-bd10-6765308de2cd"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",

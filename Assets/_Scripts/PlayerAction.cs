@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerAction : MonoBehaviour
 {
     [SerializeField] private float jumpAmount;
+    [SerializeField] private UICanvasHitDetector uiCanvasHitDetector;
     
     [HideInInspector] public bool allowMovement = false;
     
@@ -29,7 +30,7 @@ public class PlayerAction : MonoBehaviour
     
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (!allowMovement)
+        if (uiCanvasHitDetector.IsPointerOverUI() || !allowMovement)
         {
             return;
         }
