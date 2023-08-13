@@ -55,4 +55,9 @@ public class Character : MonoBehaviour
     {
         _playerAction.allowMovement = false;
     }
+
+    public void FreezeMovement(bool freeze)
+    {
+        _playerAction.FreezePlayer(freeze);
+    }
 }

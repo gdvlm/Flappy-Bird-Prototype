@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject defeatMenu;
+    [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameHud;
     [SerializeField] private Transform pipePairs;
     [SerializeField] private GameObject character;
@@ -60,5 +61,24 @@ public class GameController : MonoBehaviour
         {
             pipeMovement.EnableMovement(false);
         }
+    }
+
+    public void PauseGame()
+    {
+        StopGame();
+        pauseMenu.SetActive(true);
+        _character.FreezeMovement(true);
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        gameHud.SetActive(true);
+        _character.FreezeMovement(false);
+        
+        foreach (PipeMovement pipeMovement in _pipeMovements)
+        {
+            pipeMovement.EnableMovement(true);
+        }        
     }
 }

@@ -1760,19 +1760,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 300213834883700848, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 140.3673
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 300213834883700848, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -209
+      value: -219
       objectReference: {fileID: 0}
     - target: {fileID: 300213834883700849, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_Size.y
-      value: 400
+      value: 475
       objectReference: {fileID: 0}
     - target: {fileID: 300213835151816785, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 475
       objectReference: {fileID: 0}
     - target: {fileID: 300213835151816785, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1885,13 +1885,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2101316957}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2019,13 +2019,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2101316957}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3486,7 +3486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1619887592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4383,6 +4383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMenu: {fileID: 86655497}
   defeatMenu: {fileID: 483861968}
+  pauseMenu: {fileID: 1619887591}
   gameHud: {fileID: 2915377}
   pipePairs: {fileID: 1735027273}
   character: {fileID: 801887800}
@@ -4547,6 +4548,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ScoreBox
       objectReference: {fileID: 0}
+    - target: {fileID: 300213833776538703, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_Size.y
+      value: 170
+      objectReference: {fileID: 0}
     - target: {fileID: 300213834031280332, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: startPosition
       value: 
@@ -4639,6 +4644,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 300213834212169942, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 170
+      objectReference: {fileID: 0}
     - target: {fileID: 300213834883700848, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
@@ -4657,7 +4666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 300213834883700848, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -130
+      value: -154
       objectReference: {fileID: 0}
     - target: {fileID: 300213834883700849, guid: 003d7b1f5e7b689409e399e033a3b323, type: 3}
       propertyPath: m_Size.y

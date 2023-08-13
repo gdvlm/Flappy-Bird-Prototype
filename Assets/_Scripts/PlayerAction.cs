@@ -42,4 +42,18 @@ public class PlayerAction : MonoBehaviour
     {
         _rigidbody2D.velocity = Vector2.zero;
     }
+
+    public void FreezePlayer(bool freeze)
+    {
+        if (freeze)
+        {
+            _inputActionsWrapper.Gameplay.Disable();
+            _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
+            return;
+        }
+
+        _inputActionsWrapper.Gameplay.Enable();
+        _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _rigidbody2D.WakeUp(); // Important to wake up the Rigidbody!
+    }
 }
