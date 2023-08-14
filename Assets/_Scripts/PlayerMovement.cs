@@ -5,12 +5,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform startingPoint;
 
     [HideInInspector] public bool canMove = true;
-    
+
+    private Player _player;
     private PlayerInput _playerInput;
-    private bool _isAlive = true;
     
     void Awake()
     {
+        _player = GetComponent<Player>();
         _playerInput = GetComponent<PlayerInput>();
     }
 
@@ -19,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.transform.CompareTag("Pipe"))
         {
             DisableMovement();
-            canMove = false;
-            _isAlive = false;
         }
     }
 
@@ -29,8 +28,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.transform.CompareTag("Ground"))
         {
             DisableMovement();
-            canMove = false;
-            _isAlive = false;
         }
     }
 
@@ -39,21 +36,13 @@ public class PlayerMovement : MonoBehaviour
         transform.position = startingPoint.position;
         _playerInput.allowMovement = true;
         _playerInput.ResetVelocity();
-        _isAlive = true;
-    }
-
-    public bool IsAlive()
-    {
-        return _isAlive;
+        _player.SetAlive(true);
     }
     
     private void DisableMovement()
     {
         _playerInput.allowMovement = false;
-    }
-
-    public void FreezeMovement(bool freeze)
-    {
-        _playerInput.FreezePlayer(freeze);
+        canMove = false;
+        _player.SetAlive(false);
     }
 }

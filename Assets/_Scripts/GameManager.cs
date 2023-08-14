@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
 
     private readonly List<PipeMovement> _pipeMovements = new();
     private PlayerMovement _playerMovement;
+    private PlayerInput _playerInput;
     private ScoreManager _scoreManager;
 
     void Awake()
     {
         _playerMovement = character.GetComponent<PlayerMovement>();
+        _playerInput = character.GetComponent<PlayerInput>();
         _scoreManager = GetComponent<ScoreManager>();
     }
 
@@ -67,14 +69,14 @@ public class GameManager : MonoBehaviour
     {
         StopGame();
         pauseMenu.SetActive(true);
-        _playerMovement.FreezeMovement(true);
+        _playerInput.FreezePlayer(true);
     }
 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         gameHud.SetActive(true);
-        _playerMovement.FreezeMovement(false);
+        _playerInput.FreezePlayer(false);
         
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {
