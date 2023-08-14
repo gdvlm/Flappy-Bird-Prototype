@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject character;
 
     private readonly List<PipeMovement> _pipeMovements = new();
-    private PlayerMovement playerMovement;
-    private ScoreManager scoreManager;
+    private PlayerMovement _playerMovement;
+    private ScoreManager _scoreManager;
 
     void Awake()
     {
-        playerMovement = character.GetComponent<PlayerMovement>();
-        scoreManager = GetComponent<ScoreManager>();
+        _playerMovement = character.GetComponent<PlayerMovement>();
+        _scoreManager = GetComponent<ScoreManager>();
     }
 
     void Start()
@@ -27,12 +27,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (playerMovement.canMove)
+        if (_playerMovement.canMove)
         {
             return;
         }
         
-        playerMovement.canMove = true;
+        _playerMovement.canMove = true;
         StopGame();
         defeatMenu.SetActive(true);
     }
@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
         startMenu.SetActive(false);
         gameHud.SetActive(true);
         character.SetActive(true);
-        playerMovement.ResetCharacter();
-        scoreManager.ResetScore();
+        _playerMovement.ResetCharacter();
+        _scoreManager.ResetScore();
 
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {
@@ -67,14 +67,14 @@ public class GameManager : MonoBehaviour
     {
         StopGame();
         pauseMenu.SetActive(true);
-        playerMovement.FreezeMovement(true);
+        _playerMovement.FreezeMovement(true);
     }
 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         gameHud.SetActive(true);
-        playerMovement.FreezeMovement(false);
+        _playerMovement.FreezeMovement(false);
         
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {

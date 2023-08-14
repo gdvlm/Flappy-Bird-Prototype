@@ -6,16 +6,16 @@ public class PlayerScore : MonoBehaviour
 {
     [SerializeField] private ScoreManager scoreManager;
     
-    private PlayerMovement playerMovement;
+    private PlayerMovement _playerMovement;
     
     void Awake()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        _playerMovement = GetComponent<PlayerMovement>();
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.transform.CompareTag("ScoreBox") && playerMovement.IsAlive())
+        if (other.transform.CompareTag("ScoreBox") && _playerMovement.IsAlive())
         {
             scoreManager.IncrementScore();
         }

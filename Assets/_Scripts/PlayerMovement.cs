@@ -6,12 +6,12 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector] public bool canMove = true;
     
-    private PlayerInput playerInput;
+    private PlayerInput _playerInput;
     private bool _isAlive = true;
     
     void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
+        _playerInput = GetComponent<PlayerInput>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,8 +37,8 @@ public class PlayerMovement : MonoBehaviour
     public void ResetCharacter()
     {
         transform.position = startingPoint.position;
-        playerInput.allowMovement = true;
-        playerInput.ResetVelocity();
+        _playerInput.allowMovement = true;
+        _playerInput.ResetVelocity();
         _isAlive = true;
     }
 
@@ -49,11 +49,11 @@ public class PlayerMovement : MonoBehaviour
     
     private void DisableMovement()
     {
-        playerInput.allowMovement = false;
+        _playerInput.allowMovement = false;
     }
 
     public void FreezeMovement(bool freeze)
     {
-        playerInput.FreezePlayer(freeze);
+        _playerInput.FreezePlayer(freeze);
     }
 }
