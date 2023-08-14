@@ -1,18 +1,17 @@
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform startingPoint;
-    [SerializeField] private ScoreKeeper scoreKeeper;
 
     [HideInInspector] public bool canMove = true;
     
-    private PlayerAction _playerAction;
+    private PlayerInput playerInput;
     private bool _isAlive = true;
     
     void Awake()
     {
-        _playerAction = GetComponent<PlayerAction>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,14 +23,6 @@ public class Character : MonoBehaviour
             _isAlive = false;
         }
     }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.transform.CompareTag("ScoreBox") && _isAlive)
-        {
-            scoreKeeper.IncrementScore();
-        }
-    }    
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -46,18 +37,23 @@ public class Character : MonoBehaviour
     public void ResetCharacter()
     {
         transform.position = startingPoint.position;
-        _playerAction.allowMovement = true;
-        _playerAction.ResetVelocity();
+        playerInput.allowMovement = true;
+        playerInput.ResetVelocity();
         _isAlive = true;
+    }
+
+    public bool IsAlive()
+    {
+        return _isAlive;
     }
     
     private void DisableMovement()
     {
-        _playerAction.allowMovement = false;
+        playerInput.allowMovement = false;
     }
 
     public void FreezeMovement(bool freeze)
     {
-        _playerAction.FreezePlayer(freeze);
+        playerInput.FreezePlayer(freeze);
     }
 }

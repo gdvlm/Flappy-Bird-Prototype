@@ -2530,6 +2530,7 @@ GameObject:
   - component: {fileID: 801887803}
   - component: {fileID: 801887802}
   - component: {fileID: 801887805}
+  - component: {fileID: 801887806}
   - component: {fileID: 801887804}
   m_Layer: 5
   m_Name: Character
@@ -2634,8 +2635,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingPoint: {fileID: 421489127}
-  scoreKeeper: {fileID: 2101316958}
+  scoreManager: {fileID: 2101316958}
   canMove: 1
+--- !u!114 &801887806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801887800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bc953817cc97942824414edd19e04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 2101316958}
 --- !u!1 &907729666
 GameObject:
   m_ObjectHideFlags: 0
@@ -4372,7 +4386,7 @@ GameObject:
   - component: {fileID: 2101316957}
   - component: {fileID: 2101316958}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

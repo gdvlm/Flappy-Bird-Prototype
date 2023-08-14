@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject defeatMenu;
@@ -11,13 +11,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject character;
 
     private readonly List<PipeMovement> _pipeMovements = new();
-    private Character _character;
-    private ScoreKeeper _scoreKeeper;
+    private PlayerMovement playerMovement;
+    private ScoreManager scoreManager;
 
     void Awake()
     {
-        _character = character.GetComponent<Character>();
-        _scoreKeeper = GetComponent<ScoreKeeper>();
+        playerMovement = character.GetComponent<PlayerMovement>();
+        scoreManager = GetComponent<ScoreManager>();
     }
 
     void Start()
@@ -27,12 +27,12 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (_character.canMove)
+        if (playerMovement.canMove)
         {
             return;
         }
         
-        _character.canMove = true;
+        playerMovement.canMove = true;
         StopGame();
         defeatMenu.SetActive(true);
     }
@@ -43,8 +43,8 @@ public class GameController : MonoBehaviour
         startMenu.SetActive(false);
         gameHud.SetActive(true);
         character.SetActive(true);
-        _character.ResetCharacter();
-        _scoreKeeper.ResetScore();
+        playerMovement.ResetCharacter();
+        scoreManager.ResetScore();
 
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {
@@ -67,14 +67,14 @@ public class GameController : MonoBehaviour
     {
         StopGame();
         pauseMenu.SetActive(true);
-        _character.FreezeMovement(true);
+        playerMovement.FreezeMovement(true);
     }
 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         gameHud.SetActive(true);
-        _character.FreezeMovement(false);
+        playerMovement.FreezeMovement(false);
         
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {

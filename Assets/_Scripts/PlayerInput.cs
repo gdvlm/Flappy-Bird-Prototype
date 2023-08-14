@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerAction : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private float jumpAmount;
     [SerializeField] private UICanvasHitDetector uiCanvasHitDetector;
