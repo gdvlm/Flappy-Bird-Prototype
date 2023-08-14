@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Player), typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform startingPoint;

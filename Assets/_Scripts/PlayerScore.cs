@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Player))]
 public class PlayerScore : MonoBehaviour
 {
     [SerializeField] private ScoreManager scoreManager;

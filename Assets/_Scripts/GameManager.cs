@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ScoreManager))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject startMenu;

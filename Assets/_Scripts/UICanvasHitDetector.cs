@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(GraphicRaycaster))]
 public class UICanvasHitDetector : MonoBehaviour
 {
     private GraphicRaycaster _graphicRaycaster;
