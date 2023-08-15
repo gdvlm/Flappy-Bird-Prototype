@@ -19,7 +19,7 @@ public class PipeMovement : MonoBehaviour
         {
             return;
         }
-        
+
         float distance = movementSpeed * Time.fixedDeltaTime;
         transform.position += Vector3.left * distance;
     }

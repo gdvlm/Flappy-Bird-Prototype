@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        
+
         _playerMovement.canMove = true;
         StopGame();
         defeatMenu.SetActive(true);
@@ -59,11 +59,7 @@ public class GameManager : MonoBehaviour
     public void StopGame()
     {
         gameHud.SetActive(false);
-        
-        foreach (PipeMovement pipeMovement in _pipeMovements)
-        {
-            pipeMovement.EnableMovement(false);
-        }
+        SetPipeMovements(false);
     }
 
     public void PauseGame()
@@ -78,10 +74,14 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         gameHud.SetActive(true);
         _playerInput.FreezePlayer(false);
-        
+        SetPipeMovements(true);
+    }
+
+    private void SetPipeMovements(bool enableMovement)
+    {
         foreach (PipeMovement pipeMovement in _pipeMovements)
         {
-            pipeMovement.EnableMovement(true);
-        }        
+            pipeMovement.EnableMovement(enableMovement);
+        }
     }
 }

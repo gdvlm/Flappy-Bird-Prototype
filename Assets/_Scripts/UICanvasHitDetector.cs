@@ -31,7 +31,7 @@ public class UICanvasHitDetector : MonoBehaviour
         // further processing.
         var results = new List<RaycastResult>();
         _graphicRaycaster.Raycast(pointerEventData, results);
-        
-        return results.Any(r => r.gameObject.name.EndsWith("Button"));        
+
+        return results.Any(r => r.gameObject.name.EndsWith("Button"));
     }
 }

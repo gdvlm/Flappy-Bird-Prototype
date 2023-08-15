@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Player _player;
     private PlayerInput _playerInput;
-    
+
     void Awake()
     {
         _player = GetComponent<Player>();
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         _playerInput.ResetVelocity();
         _player.SetAlive(true);
     }
-    
+
     private void DisableMovement()
     {
         _playerInput.allowMovement = false;

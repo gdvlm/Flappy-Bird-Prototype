@@ -6,12 +6,12 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private float jumpAmount;
     [SerializeField] private UICanvasHitDetector uiCanvasHitDetector;
-    
+
     [HideInInspector] public bool allowMovement = false;
-    
+
     private Rigidbody2D _rigidbody2D;
     private InputActionsWrapper _inputActionsWrapper;
-    
+
     void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -28,14 +28,14 @@ public class PlayerInput : MonoBehaviour
     {
         _inputActionsWrapper.Gameplay.Disable();
     }
-    
+
     public void OnJump(InputAction.CallbackContext context)
     {
         if (uiCanvasHitDetector.IsPointerOverUI() || !allowMovement)
         {
             return;
         }
-        
+
         // Setting the velocity directly allows us to ignore the current downward force
         _rigidbody2D.velocity = new Vector2(0, jumpAmount);
     }

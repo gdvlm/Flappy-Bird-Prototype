@@ -30,6 +30,6 @@ public class ScoreManager : MonoBehaviour
     {
         _currentScore = score;
         scoreText.text = score.ToString();
-        defeatScoreText.text = score.ToString();        
+        defeatScoreText.text = score.ToString();
     }
 }
