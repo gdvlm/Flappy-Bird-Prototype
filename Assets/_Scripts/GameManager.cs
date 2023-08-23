@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(ScoreManager))]
 public class GameManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameHud;
     [SerializeField] private Transform pipePairs;
-    [SerializeField] private GameObject character;
+    [SerializeField] private GameObject player;
 
     private readonly List<PipeMovement> _pipeMovements = new();
     private PlayerMovement _playerMovement;
@@ -18,8 +19,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        _playerMovement = character.GetComponent<PlayerMovement>();
-        _playerInput = character.GetComponent<PlayerInput>();
+        _playerMovement = player.GetComponent<PlayerMovement>();
+        _playerInput = player.GetComponent<PlayerInput>();
         _scoreManager = GetComponent<ScoreManager>();
     }
 
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
         defeatMenu.SetActive(false);
         startMenu.SetActive(false);
         gameHud.SetActive(true);
-        character.SetActive(true);
+        player.SetActive(true);
         _playerMovement.ResetCharacter();
         _scoreManager.ResetScore();
 

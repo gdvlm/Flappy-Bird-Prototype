@@ -2688,7 +2688,7 @@ GameObject:
   - component: {fileID: 667820100}
   - component: {fileID: 667820099}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4743,7 +4743,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 1619887591}
   gameHud: {fileID: 2915377}
   pipePairs: {fileID: 1735027273}
-  character: {fileID: 667820097}
+  player: {fileID: 667820097}
 --- !u!114 &2101316958
 MonoBehaviour:
   m_ObjectHideFlags: 0
