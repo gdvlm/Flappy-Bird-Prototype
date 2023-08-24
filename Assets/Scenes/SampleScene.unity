@@ -461,7 +461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &86655498
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3547,12 +3547,12 @@ GameObject:
   - component: {fileID: 1330369666}
   - component: {fileID: 1330369665}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DefaultCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1330369665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4741,6 +4741,7 @@ MonoBehaviour:
   startMenu: {fileID: 86655497}
   defeatMenu: {fileID: 483861968}
   pauseMenu: {fileID: 1619887591}
+  defaultCanvas: {fileID: 1330369664}
   gameHud: {fileID: 2915377}
   pipePairs: {fileID: 1735027273}
   player: {fileID: 667820097}
