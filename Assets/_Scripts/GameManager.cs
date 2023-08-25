@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(ScoreManager))]
 public class GameManager : MonoBehaviour
@@ -8,7 +7,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject defeatMenu;
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject defaultCanvas;
     [SerializeField] private GameObject gameHud;
     [SerializeField] private Transform pipePairs;
     [SerializeField] private GameObject player;
@@ -28,7 +26,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _pipeMovements.AddRange(pipePairs.GetComponentsInChildren<PipeMovement>());
-        defaultCanvas.SetActive(true);
         startMenu.SetActive(true);
     }
 
