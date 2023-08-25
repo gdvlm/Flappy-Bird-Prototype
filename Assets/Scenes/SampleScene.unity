@@ -2311,7 +2311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3158c5320806b244caeba3b8363d7d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpAmount: 8
+  jumpAmount: 9.5
   uiCanvasHitDetector: {fileID: 2041990541}
   allowMovement: 0
 --- !u!114 &667820103
